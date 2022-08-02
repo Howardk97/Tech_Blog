@@ -37,27 +37,27 @@ router.get('/', async (req, res) => {
     // }
 
     try {
-        const UserInfo = await User.findByPk(1);
+        // const UserInfo = await User.findByPk(1);
 
-        const serializedUserData = UserInfo.get({ plain: true });
-        console.log(serializedUserData);
-        res.render("homepage", serializedUserData);
+        // const serializedUserData = UserInfo.get({ plain: true });
+        // console.log(serializedUserData);
+        res.render("homepage");
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/', async (req, res) => {
-    try {
-        const PostData = await Post.findByPk(4);
+// router.get('/', async (req, res) => {
+//     try {
+//         const PostData = await Post.findByPk(4);
 
-        const serializedPostData = PostData.get({ plain: true });
+//         const serializedPostData = PostData.get({ plain: true });
 
-        res.render("homepage", serializedPostData);
-    } catch(err) {
-        res.status(500).json(err);
-    }
-})
+//         res.render("homepage", serializedPostData);
+//     } catch(err) {
+//         res.status(500).json(err);
+//     }
+// })
 
 // router.get('/post/:id', async(req, res) => {
 //     try {
