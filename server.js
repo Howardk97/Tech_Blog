@@ -1,18 +1,24 @@
-// Packages
+// Libraries and Packages and files used
 const path = require('path');
 const express = require('express');
+const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
-
-// Tell application that we are using the controllers folder
 const routes = require('./controllers')
 
+// Create handlebars
+const hbs = exphbs.create({});
+
 // initialize model
-const model = require('./models');
+// const model = require('./models');
 
 // initialize app
 const app = express();
 
-// Connect to json file
+// Set the engine for express-handlebars
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+
+// Accept json data
 app.use(express.json());
 app.use(express.urlencoded());
 

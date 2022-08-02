@@ -13,15 +13,19 @@ router.post('/', async(req, res) => {
             password: req.body.password
         });
 
-        res.status(200).json(userData);
+        // req.session.save(() => {
+            // req.session.logged_in = true;
+
+            res.status(200).json(userData);
+        // });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
 // Gets user information based on id
-// /api/user/userInfo/id
-router.get('/userInfo/:id', async(req, res) => {
+// /api/user/login/id
+router.get('/login/:id', async(req, res) => {
     try {
         const UserInfo = await User.findByPk(req.params.id)
     
@@ -30,7 +34,5 @@ router.get('/userInfo/:id', async(req, res) => {
         res.status(500).json(err);
     }
 });
-
-router.
 
 module.exports = router;

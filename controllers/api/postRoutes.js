@@ -3,6 +3,7 @@ const router = require('express').Router();
 const { POST, Post } = require('../../models');
 
 // Create a post
+// /api/post
 router.post('/', async(req, res) => {
     try {
         const postData = await Post.create({
@@ -16,4 +17,5 @@ router.post('/', async(req, res) => {
     }
 });
 
+// router.get()
 module.exports = router;

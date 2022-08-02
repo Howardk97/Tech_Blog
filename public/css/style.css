@@ -1,0 +1,34 @@
+header {
+    background-color: #302103;
+    /* color: #302103; */
+    /* font-weight: bold; */
+    /* font-size: 24px; */
+}
+
+#logo {
+    height: 10px;
+    font-weight: bold;
+}
+
+/* 
+.nav {
+    display: inline;
+    color: #c5e0d3;
+}
+
+.header-card {
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    box-shadow: 4px 3px #cac7c3;
+    background-color: #c5e0d3;
+} */
+
+a {
+    display: flex;
+    align-content: center;
+}

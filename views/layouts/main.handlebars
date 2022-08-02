@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+        <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    {{!-- CSS Style Sheet --}}
+    <link rel="stylesheet" href="../../public/css/style.css">
+</head>
+<body>
+    {{!-- {{{body}}} --}}
+    <header>
+        <nav class="card-panel brown darken-4 nav-extended">
+            <div class="nav-wrapper">
+            <ul class="left">
+                <li><a class="green-text text-lighten-4">Home</a></li>
+                <li><a class="green-text text-lighten-4">Dashboard</a></li>
+                {{#if logged_in}}
+                <li><a class="green-text text-lighten-4">Logout</a></li>
+                {{else}}
+                <li><a class="green-text text-lighten-4">Login</a></li>
+                {{/if}}
+            </ul>
+            </div>
+            <div class="nav-content">
+            <span id="logo" class="nav-title card-panel green lighten-4 brown-text text-darken-4">The Tech Blog</span>
+            </div>
+        </nav>
+    </header>
+
+    {{{body}}}
+</body>
+</html>
