@@ -3,49 +3,49 @@ const router = require("express").Router();
 const { Post, User } = require('../models');
 
 // /
-router.get('/', async (req, res) => {
-    // res.json("I can come from the homeRoutes file!");
-    // try {
-    //     const postData = await Post.findAll({
-    //         include: [
-    //             {
-    //                 model: User,
-    //                 attributes: ['username'],
-    //             },
-    //         ],
-    //     });
+// router.get('/', async (req, res) => {
+//     // res.json("I can come from the homeRoutes file!");
+//     // try {
+//     //     const postData = await Post.findAll({
+//     //         include: [
+//     //             {
+//     //                 model: User,
+//     //                 attributes: ['username'],
+//     //             },
+//     //         ],
+//     //     });
 
-    //     // const postData = await Post.findAll();
-    //     const posts = postData.map((post) => post.get({ plain: true }))
-    //     res.render('homepage', {
-    //         posts,
-    //         logged_in: req.session.logged_in
-    //     })
+//     //     // const postData = await Post.findAll();
+//     //     const posts = postData.map((post) => post.get({ plain: true }))
+//     //     res.render('homepage', {
+//     //         posts,
+//     //         logged_in: req.session.logged_in
+//     //     })
 
-    //     // res.status(200).json(postData);
-    //     // res.render("homepage");
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
+//     //     // res.status(200).json(postData);
+//     //     // res.render("homepage");
+//     // } catch (err) {
+//     //     res.status(500).json(err);
+//     // }
 
-    // try {
-    //     const UserInfo = await User.findByPk(req.params.id);
+//     // try {
+//     //     const UserInfo = await User.findByPk(req.params.id);
 
-    //     res.status(200).json(UserInfo)
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
+//     //     res.status(200).json(UserInfo)
+//     // } catch (err) {
+//     //     res.status(500).json(err);
+//     // }
 
-    try {
-        // const UserInfo = await User.findByPk(1);
+//     try {
+//         // const UserInfo = await User.findByPk(1);
 
-        // const serializedUserData = UserInfo.get({ plain: true });
-        // console.log(serializedUserData);
-        res.render("homepage");
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+//         // const serializedUserData = UserInfo.get({ plain: true });
+//         // console.log(serializedUserData);
+//         res.render("homepage");
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 // router.get('/', async (req, res) => {
 //     try {
@@ -66,5 +66,18 @@ router.get('/', async (req, res) => {
 
 //     }
 // });
+
+router.get('/', async (req, res) => {
+    try {
+        const postData = await Post.findAll();
+
+        const posts = postData.map((post) => post.get({ plain: true }));
+        // const serializedPostData = PostData.get({ plain: true });
+
+        res.render("homepage", { posts });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;
