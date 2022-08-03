@@ -1,9 +1,11 @@
 <main>
-    <ul class="collection card-panel brown darken-4">
+    <div>
       {{!-- <li class="collection-item card-panel brown darken-4">{{title}}</li>
       <li class="collection-item card-panel green lighten-4">{{text}}</li> --}}
-      {{#each posts as |post|}}
-      {{> blog-details}}
-      {{/each}}
-    </ul>
+      <p>
+        {{#each posts as |post|}}
+        {{> blog-details}}
+        {{/each}}
+      </p>
+    </div>
 </main>
